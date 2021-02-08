@@ -24,19 +24,6 @@ services:
     volumes:
       - code:/code
     depends_on:
-      - php
-
-  php:
-    container_name: ${DOMAIN}_php
-    build:
-      context: ./services/php
-      args:
-        PHP_VERSION: ${PHP_VERSION}
-    restart: always
-    volumes:
-      - code:/code
-    depends_on:
-      - mysql
       - wordpress
 
   mysql:
